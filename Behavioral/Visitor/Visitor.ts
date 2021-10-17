@@ -65,10 +65,10 @@ bv1.methodB();
 bv2.methodA();
 bv2.methodB();
 
-let extC = new ExtMethodC();
-let extD = new ExtMethodD();
+let extC: Visitor = new ExtMethodC();
+let extD: Visitor = new ExtMethodD();
 
-bv1.accept(extC);
-bv1.accept(extD);
-bv2.accept(extC);
-bv2.accept(extD);
+bv1.accept(extC);   // double dispatch
+bv1.accept(extD);   // double dispatch
+bv2.accept(extC);   // double dispatch
+bv2.accept(extD);   // double dispatch
